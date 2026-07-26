@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
-  @apply m-0 p-0 box-border;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -9,68 +11,77 @@ html {
 }
 
 body {
-  @apply bg-background text-white font-sans;
+  background-color: #0F172A;
+  color: #ffffff;
+  font-family: 'Poppins', system-ui, sans-serif;
 }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  @apply w-2;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-card;
+  background-color: #1E293B;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-full;
+  background-color: #3B82F6;
+  border-radius: 9999px;
 }
 
 /* Selection styling */
 ::selection {
-  @apply bg-primary text-white;
+  background-color: #3B82F6;
+  color: #ffffff;
 }
 
 /* Focus visible styling */
 :focus-visible {
-  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  outline: none;
+  --tw-ring-offset-shadow: 0 0 0 2px #0F172A;
+  --tw-ring-shadow: 0 0 0 2px #3B82F6;
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 transparent;
 }
 
 /* Animations */
 @keyframes fade-in {
   from {
-    @apply opacity-0;
+    opacity: 0;
   }
   to {
-    @apply opacity-100;
+    opacity: 1;
   }
 }
 
 @keyframes slide-in-up {
   from {
-    @apply opacity-0 translate-y-4;
+    opacity: 0;
+    transform: translateY(16px);
   }
   to {
-    @apply opacity-100 translate-y-0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    @apply shadow-none;
+    box-shadow: none;
   }
   50% {
-    @apply shadow-lg shadow-primary/50;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5);
   }
 }
 
 .animate-fade-in {
-  @apply animate-duration-300 animate-fade-in;
+  animation: fade-in 300ms ease-in-out;
 }
 
 .animate-slide-in-up {
-  @apply animate-duration-300 animate-slide-in-up;
+  animation: slide-in-up 300ms ease-in-out;
 }
 
 .animate-pulse-glow {
-  @apply animate-pulse-glow animation-infinite;
+  animation: pulse-glow 2s ease-in-out infinite;
 }
