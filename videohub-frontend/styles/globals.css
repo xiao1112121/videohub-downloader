@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply bg-background text-white font-sans dark;
+  @apply bg-background text-white font-sans;
 }
 
 /* Scrollbar styling */
