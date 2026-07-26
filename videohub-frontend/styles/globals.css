@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-white font-sans dark;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-card;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-primary text-white;
+}
+
+/* Focus visible styling */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    @apply opacity-0 translate-y-4;
+  }
+  to {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    @apply shadow-none;
+  }
+  50% {
+    @apply shadow-lg shadow-primary/50;
+  }
+}
+
+.animate-fade-in {
+  @apply animate-duration-300 animate-fade-in;
+}
+
+.animate-slide-in-up {
+  @apply animate-duration-300 animate-slide-in-up;
+}
+
+.animate-pulse-glow {
+  @apply animate-pulse-glow animation-infinite;
+}
